@@ -25,11 +25,11 @@ int getRating(string username, string bookTitle, User users[], Book books[], int
     string bookUpper[50]; //create a string called bookUpper and set it to 50.
     string nameUpper[50]; //create a string called nameUpper and set it to 50.
     
-    for (int i = 0; i < username.length(); i++) //set a counter i. For i less than the length of username, do the following, then add 1
+    for (int i = 0; i < bookTitle.length(); i++) //set a counter i. For i less than the length of username, do the following, then add 1
     {
         bookTitleUpper += toupper(bookTitle[i]); //make bookTitle at array position i capital, then add 1 to i. 
     }
-    for (int j = 0; j < bookTitle.length(); j++) //set a counter i. For i less than the length of username, do the following, then add 1
+    for (int j = 0; j < username.length(); j++) //set a counter i. For i less than the length of username, do the following, then add 1
     {
         usernameUpper += toupper(username[j]); //make username at array position j capital, then add 1 to j. 
     }
@@ -70,19 +70,46 @@ int getRating(string username, string bookTitle, User users[], Book books[], int
             userIndex = i; //set userIndex to i.
         }
     }
-    if(!bookExists && !userExists)
+    if(bookExists == false || userExists == false)
     {
         return -3; //if either are false, return -3
     }
     else
     {
+        cout << userIndex << endl;
+        cout << bookIndex << endl;
+        cout << bookUpper << endl;
+        cout << nameUpper << endl;
         return users[userIndex].getRatingAt(bookIndex); //else, return users[userIndex] using the getRatingAt function with bookIndex position.
     }
 }
 
 int main()
 {
-    User users[50] =  {"Tom", "Mark", "Kyle"};
-    Book books[50] = {"The Foundtainhead", "Send Help Please", "This homework is so frustrating bro", "Seg Fault"};
-    cout << getRating("Tom", "The Fountainhead", users, books, 5, 4) << endl;
+User users[2];
+    users[0].setUsername("Dave");
+    users[1].setUsername("Rio");
+
+    users[0].setRatingAt(0, 4);
+    users[0].setRatingAt(1, 5);
+    users[1].setRatingAt(0, 3);
+    users[1].setRatingAt(1, 2);
+
+    Book books[2];
+    books[0].setTitle("Stormblood");
+    books[1].setTitle("Shadowbringers");
+
+    // test 1
+    // arguments: username = Dave, title = Stormblood, users = users, books = books, currentUsers = 2, currentBooks = 2
+    // expected output: rating1 = 4
+    // explanation: Dave rated Stormblood a 4
+    int rating1 = getRating("Dave", "Stormblood", users, books, 2, 2);
+    cout << "rating1 = " << rating1 << endl;
+
+    // test 2
+    // arguments: username = Charlie, title = Shadowbringers, users = users, books = books, currentUser = 0, currentBooks = 2
+    // expected output: rating2 = -3
+    // explanation: User Charlie does not exist
+    int rating2 = getRating("Charlie", "Shadowbringers", users, books, 0, 2);
+    cout << "rating2 = " << rating2 << endl;
 }

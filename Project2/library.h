@@ -8,6 +8,8 @@
 #include <math.h>
 #include <iomanip>
 #include <string>
+#include "Book.h"
+#include "User.h"
 using namespace std;
 
 #ifndef LIBRARY_H
@@ -23,18 +25,28 @@ class Library
         int getNumBooks();
         int getNumUsers();
         int readBooks (string);
-        string printAllBooks();
-        string printAllBooksByAuthor(string);
+        void printAllBooks();
+        void printBooksByAuthor(string);
         int readRatings(string);
         int getRating(string, string);
         int getCountReadBooks(string);
+        void viewRatings (string, int);
+        double calcAvgRating (string);
+        double calcAvgRatingByAuthor(string);
+        int addUser (string);
+        int checkOutBook (string, string, int);
+        void getRecommendations(string);
+
         
     private:
         string username;
         const static int sizeBook = 50;
         const static int sizeUser = 100;
+        Book books[sizeBook];
+        User users[sizeUser];
         int numBooks;
         int numUsers;
+
 }
 ;
 #endif
