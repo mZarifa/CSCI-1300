@@ -1,7 +1,7 @@
 // CS1300 Fall 2019
 // Author: Matthew Zarifa
 // Recitation: 112 - Behera
-// Homework #8 Problem 2
+// Project 3
 
 #include <iostream>
 #include <fstream>
@@ -20,15 +20,22 @@ class Player
 {
     public:
     Player();
-    Player(string, double);
+    Player(string, double, int, string, string);
     string getName();
     double getPoints();
     void setName(string);
     void setPoints(double);
+    int getBadges();
+    string getPokemon();
+    string getInventory();
+    void setPokemon(string);
     
     private:
     string name;
     double points;
-    
+    int badges;
+    string inventory;
+    string activePokemon;
+
 };
 #endif

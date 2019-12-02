@@ -51,7 +51,7 @@ void split(string line, char deliminator, string words[], int arrSize) //create 
 Team::Team()
 {
     teamName = "";
-    for(int i = 0; i < players.size(); i++)
+    for(int i = 0; i < players.size(); i++) //create a team, and set their names to blank and players to blank.
     {
         players[i].setName("");
         players[i].setPoints(0);
@@ -60,72 +60,71 @@ Team::Team()
 
 Team::Team(string input)
 {
-    teamName = input;
-    for(int i = 0; i < players.size(); i++)
+    teamName = input; //set the teamName to input, then...
+    for(int i = 0; i < players.size(); i++) 
     {
-        players[i].setName("");
-        players[i].setPoints(0);
+        players[i].setName(""); //set their names to blank
+        players[i].setPoints(0); //set their points to blank
     }
 }
 
 void Team::setTeamName(string input)
 {
-    teamName = input;
+    teamName = input; //function to set input to the teamName.
 }
 
-void Team::readRoster(string fileName)
+void Team::readRoster(string fileName) //function for reading the roster.
 {
-    string line = "";
-    string temparr[2];
+    string line = ""; //create a string called line, and make it blank.
+    string tempArray[2]; //create a temp array string with size of 3 for the name, players, and the points.
     
     ifstream in_file;
-    in_file.open(fileName);
+    in_file.open(fileName); //open the file
     
-    if(in_file.is_open())
+    if(in_file.is_open()) //if its open
     {
-        while (getline(in_file, line))
+        while (getline(in_file, line)) //while its open
         {
-                    split(line, ',', temparr, 2);
-                    
-                    Player newPlayer;
-                    newPlayer.setName(temparr[0]);
-                    newPlayer.setPoints(stod(temparr[1]));
-                    players.push_back(newPlayer);
+            split(line, ',', tempArray, 2); //run the split function
+            Player newPlayer; 
+            newPlayer.setName(tempArray[0]); //set the new Players to tempArray[0].
+            newPlayer.setPoints(stod(tempArray[1])); //set the points to temp
+            players.push_back(newPlayer);
         }
-        in_file.close();
+        in_file.close(); //close the file.
     }
 }
 
-string Team::getPlayerName(int i)
+string Team::getPlayerName(int i) //function to get the players names
 {
-    if (i >= 0 && i < players.size())
-    { //ensures that i is within the range of the players vector
-        return players[i].getName();
+    if (i >= 0 && i < players.size()) //if i is greater than/equal to 0, but less than the fixed player size
+    {
+        return players[i].getName(); //get the name at the inputted int i
     }
     else
     {
-        return "ERROR";
+        return "ERROR"; //else return error because they're outside the range of 0 and max players. 
     }
 }
 
-double Team::getPlayerPoints(int i)
+double Team::getPlayerPoints(int i) //function to get the points.
 {
-    if(i >= 0 && i<players.size()) //ensures that i is within the range of the players vector
+    if(i >= 0 && i<players.size())  //if i is greater than/equal to 0, but less than the fixed player size
     {
-        return players[i].getPoints();
+        return players[i].getPoints(); //get the player at array position i's points.
     }
     else
     {
-        return -1;
+        return -1; //else return -1
     }
 }
 
-int Team::getNumPlayers()
+int Team::getNumPlayers() //function to get the number of players.
 {
-    return players.size();
+    return players.size(); //output the size of the team. 
 }
 
-string Team::getTeamName()
+string Team::getTeamName() //function to get the team name.
 {
-    return teamName;
+    return teamName; //output the team name.
 }

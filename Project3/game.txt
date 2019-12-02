@@ -1,0 +1,49 @@
+Classes:
+1. Player
+	Inventory (items)
+	Available Pokemon
+	Points
+	Gym Badges
+	Set Pokemon
+
+2. Pokemon
+	Parameterized constructor (number, name, stats, type, moves)
+		Moves
+		Stats
+		Level
+		HP
+3. Pokedex
+	List of all the pokemon
+
+4. Map (2D array)
+	Player location
+	Gym locations
+	Trainer locations
+	Wild pokemon locations
+	Defeated trainer locations
+
+5. Opponents class
+	List of all the trainers on the map
+	Trainer locations
+	Battle scenarios
+
+5. Trainer
+	Their Pokemon
+	Their location
+	Their status (defeated or enabled)
+
+6. Game class
+	Battle information
+	Menu Information
+	Encounter type
+		Trainer/Gym/Wild
+	Results of the battle
+
+7. Results class
+	
+	
+	
+	
+
+	
+	

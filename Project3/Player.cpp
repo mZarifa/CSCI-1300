@@ -1,7 +1,7 @@
 // CS1300 Fall 2019
 // Author: Matthew Zarifa
 // Recitation: 112 - Behera
-// Homework #8 Problem 2
+// Project 3
 
 #include <iostream>
 #include <fstream>
@@ -20,10 +20,10 @@ Player::Player()
     points = 0;
 }
 
-Player::Player(string inputName, double value)
+Player::Player(string input, double value)
 {
-    name = inputName; //set the name variable to the inputted name
-    points = value; //and set the inputted value to the points
+    name = input;
+    points = value; 
 }
 
 string Player::getName() //function to get the name
@@ -44,4 +44,20 @@ void Player::setName(string input) //function to set the name to the inputted st
 void Player::setPoints(double inValue) //function to set the points to the inputted value (inValue)
 {
     points = inValue; //set points to the inputted value. 
+}
+int Player::getBadges() //function to get the points
+{
+    return badges; //return the points
+}
+string Player::getInventory() //function to get all available items
+{
+    return inventory; //returns all inventory items
+}
+void Player::setPokemon(string input) //function to set the active Pokemon
+{
+    activePokemon = input; //sets the active pokemon to the inputted value
+}
+string Player::getPokemon() //function to get all available items
+{
+    return activePokemon;
 }
