@@ -22,19 +22,37 @@ using namespace std;
 
 int main()
 {
+    string text;
     string trainerName;
-    string starterName = "Articuno";
-    Player gameTime;
-    Pokedex masterDex("Test");
-    masterDex.readPokedex("pokemon.txt");
-    Pokemon playerPoke1(masterDex.getAllPokeStats(starterName));
-    Pokemon playerPoke2;
-    Pokemon playerPoke3;
-    Pokemon playerPoke4;
-    Pokemon playerPoke5;
-    Pokemon playerPoke6;
-    cout << "Here are your starter Pokemon's Stats!" << endl;
-    playerPoke1.getAllStats();
+    cout << "This is the debugger: Please enter a Pokemon name to check the stats. Type 'Z' to exit " <<
+            "type map to output the map." << endl;
+    getline(cin, text);
+    if (text == "Z" || text == "z")
+    {
+        return 0;
+    }
+    if (text == "map")
+    {
+        Map bigmap;
+        bigmap.readMap("mapPoke.txt");
+        bigmap.outputMap();
+    }
+    else
+    {
+        Player gameTime;
+        Pokedex masterDex("Test");
+        masterDex.readPokedex("pokemon.txt");
+        Pokemon playerPoke1(masterDex.getAllPokeStats(text));
+        Pokemon playerPoke2;
+        Pokemon playerPoke3;
+        Pokemon playerPoke4;
+        Pokemon playerPoke5;
+        Pokemon playerPoke6;
+        cout << "Here's the stats." << endl;
+        playerPoke1.getAllStats();
+        text = "";
+    }
+    main();
 }
 
 

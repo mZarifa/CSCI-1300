@@ -25,6 +25,14 @@ int starterMenuInt;
 string fileName;
 string playerName;
 string starterName;
+Player gameTime;
+Pokedex masterDex("Test");
+Pokemon playerPoke1;
+Pokemon playerPoke2;
+Pokemon playerPoke3;
+Pokemon playerPoke4;
+Pokemon playerPoke5;
+Pokemon playerPoke6;
 
 void startUpMenu()
 {
@@ -86,24 +94,19 @@ void startUpMenu()
     }
 }
 
-void mainMenu();
-{
-    
-}
-
-int main()
+void initilizer()
 {
     startUpMenu();
-    Player gameTime;
-    Pokedex masterDex("Test");
     masterDex.readPokedex("pokemon.txt");
-    Pokemon playerPoke1(masterDex.getAllPokeStats(starterName));
-    Pokemon playerPoke2;
-    Pokemon playerPoke3;
-    Pokemon playerPoke4;
-    Pokemon playerPoke5;
-    Pokemon playerPoke6;
+    Pokemon Dud(masterDex.getAllPokeStats(starterName));
+    playerPoke1 = Dud;
     cout << "Here are your starter Pokemon's stats!" << endl;
     playerPoke1.getAllStats();
     gameTime.setPlayerPokemon(playerPoke1);
+
+}
+int main()
+{
+    initilizer();
+
 }

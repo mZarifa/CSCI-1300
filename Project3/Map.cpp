@@ -90,7 +90,6 @@ void Map::readMap(string fileName) //function for reading the roster.
             {
                 split2(line, ',', tempArray, 16); //run the split function
                 newMap = tempArray[i];
-                cout << "line1 done" << endl;
                 theMap.push_back(newMap);
             }
         }
