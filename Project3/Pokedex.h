@@ -20,12 +20,28 @@ using namespace std;
 class Pokedex
 {
     public:
+    Pokedex();
     Pokedex(string);
-    void readPokemon(string);
-    string getPokemon(int);
+    void readPokedex(string);
+    string getPokeName(string);
+    int getPokeNumber(string);
+    int getPokeHP(string);
+    int getPokeAttack(string);
+    int getPokeDefense(string);
+    int getPokeSpeed(string);
+    int getPokeMax(string);
+    string getPokeType(string);
+    string getPokeType2(string);
+    Pokemon getAllPokeStats(string);
+    vector <Pokemon> pokemons;
+    
+
 
     private:
-    vector <Pokemon> Pokemon;
-};
+    string trainerName;
+    int PokedexSize = 151;
 
+
+
+};
 #endif

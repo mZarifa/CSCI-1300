@@ -12,6 +12,7 @@ Classes:
 		Stats
 		Level
 		HP
+		
 3. Pokedex
 	List of all the pokemon
 

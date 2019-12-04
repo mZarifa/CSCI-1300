@@ -9,6 +9,8 @@
 #include <iomanip>
 #include <string>
 #include <vector>
+#include "Pokemon.h"
+#include "Pokedex.h"
 
 using namespace std;
 
@@ -20,22 +22,25 @@ class Player
 {
     public:
     Player();
-    Player(string, double, int, string, string);
+    Player(string, double);
     string getName();
     double getPoints();
     void setName(string);
     void setPoints(double);
     int getBadges();
-    string getPokemon();
     string getInventory();
-    void setPokemon(string);
     
+    void setPlayerPokemon(Pokemon);
+    void setPlayerPokedex(int);
+    void getPlayerPokemon();
+
     private:
     string name;
     double points;
     int badges;
     string inventory;
-    string activePokemon;
+    vector <Pokemon> playerPokemon;
 
 };
+
 #endif

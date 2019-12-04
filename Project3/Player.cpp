@@ -10,6 +10,8 @@
 #include <string>
 #include <vector>
 #include "Player.h"
+#include "Pokemon.h"
+#include "Pokedex.h"
 
 
 using namespace std;
@@ -18,12 +20,15 @@ Player::Player()
 {
     name = ""; //global variables of blank name, and default of 0 for points value.
     points = 0;
+    badges = 0;
+    inventory = "";
+
 }
 
 Player::Player(string input, double value)
 {
     name = input;
-    points = value; 
+    points = value;
 }
 
 string Player::getName() //function to get the name
@@ -53,11 +58,23 @@ string Player::getInventory() //function to get all available items
 {
     return inventory; //returns all inventory items
 }
-void Player::setPokemon(string input) //function to set the active Pokemon
+
+void Player :: setPlayerPokemon(Pokemon h)
 {
-    activePokemon = input; //sets the active pokemon to the inputted value
+    playerPokemon.push_back(h);
 }
-string Player::getPokemon() //function to get all available items
+void Player :: getPlayerPokemon()
 {
-    return activePokemon;
+    for(int i = 0; i < playerPokemon.size(); i++)
+    {
+        cout << "Pokedex Number: " << playerPokemon[i].getPokedexNumber() << endl;
+        cout << "Name: " << playerPokemon[i].getPokemonName() << endl;
+        cout << "HP: " << playerPokemon[i].getHP() << endl;
+        cout <<  "Attack: " << playerPokemon[i].getAttack() << endl;
+        cout << "Defense: " << playerPokemon[i].getDefense() << endl;
+        cout << "Speed: " << playerPokemon[i].getSpeed() << endl;
+        cout << "Max: " << playerPokemon[i].getMax() << endl;
+        cout << "Type: "<< playerPokemon[i].getType() << endl;
+        cout << "Type2: " << playerPokemon[i].getType2() << endl;
+    }
 }
