@@ -293,3 +293,10 @@ Pokemon Pokedex :: getAllPokeStats(string input)
     }
     return pokemons[index];
 }
+Pokemon Pokedex :: getAllPokeStatsByInt(int input)
+{
+    if ((input - 1) < PokedexSize)
+    {
+        return pokemons[input];
+    }
+}

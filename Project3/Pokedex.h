@@ -33,15 +33,12 @@ class Pokedex
     string getPokeType(string);
     string getPokeType2(string);
     Pokemon getAllPokeStats(string);
-    vector <Pokemon> pokemons;
-    
-
+    Pokemon getAllPokeStatsByInt(int);
 
     private:
     string trainerName;
     int PokedexSize = 151;
-
-
-
+    vector <Pokemon> pokemons;
+    
 };
 #endif

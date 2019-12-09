@@ -30,9 +30,11 @@ class Player
     int getBadges();
     string getInventory();
     
-    void setPlayerPokemon(Pokemon);
-    void setPlayerPokedex(int);
-    void getPlayerPokemon();
+    Pokemon setPlayerPokemon(int, Pokemon);
+    void addPlayerPokemon(Pokemon);
+    Pokemon getPlayerPokemonAt(int);
+    void outputAllPlayerPokemon();
+    int getPlayerPokemonSize();
 
     private:
     string name;

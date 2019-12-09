@@ -59,22 +59,37 @@ string Player::getInventory() //function to get all available items
     return inventory; //returns all inventory items
 }
 
-void Player :: setPlayerPokemon(Pokemon h)
+void Player :: addPlayerPokemon(Pokemon h)
 {
     playerPokemon.push_back(h);
 }
-void Player :: getPlayerPokemon()
+
+Pokemon Player :: setPlayerPokemon(int i, Pokemon h)
+{
+    playerPokemon[i] = h;
+
+}
+Pokemon Player :: getPlayerPokemonAt(int input)
+{
+    return playerPokemon[input];
+}
+
+void Player :: outputAllPlayerPokemon()
 {
     for(int i = 0; i < playerPokemon.size(); i++)
     {
-        cout << "Pokedex Number: " << playerPokemon[i].getPokedexNumber() << endl;
+        cout << "Pokedex Number: " << playerPokemon[i].getPokedexNumber() << " || ";
         cout << "Name: " << playerPokemon[i].getPokemonName() << endl;
-        cout << "HP: " << playerPokemon[i].getHP() << endl;
-        cout <<  "Attack: " << playerPokemon[i].getAttack() << endl;
-        cout << "Defense: " << playerPokemon[i].getDefense() << endl;
-        cout << "Speed: " << playerPokemon[i].getSpeed() << endl;
-        cout << "Max: " << playerPokemon[i].getMax() << endl;
-        cout << "Type: "<< playerPokemon[i].getType() << endl;
+        cout << "Type: " << playerPokemon[i].getType() << " || ";
         cout << "Type2: " << playerPokemon[i].getType2() << endl;
+        cout << "HP: " << playerPokemon[i].getHP() << endl;
+        cout <<  "Attack: " << playerPokemon[i].getAttack() << " || ";
+        cout << "Defense: " << playerPokemon[i].getDefense() << " || ";
+        cout << "Speed: " << playerPokemon[i].getSpeed() << endl;
+        cout << "------------------------------------------------------" << endl;
     }
+}
+int Player :: getPlayerPokemonSize()
+{
+    return playerPokemon.size();
 }

@@ -120,6 +120,6 @@ string Pokemon::getType2()
 void Pokemon :: getAllStats()
 {
     cout << "Name: " << PokemonName << "\n" << "HP: " << to_string(HP) << "\n" <<
-    "Attack: " << to_string(Attack) << "\n" << "Defense: " << to_string(Defense) << "\n" <<
-    "Speed: " << to_string(Speed) << "\n" << "Max: " << Max << "\n" << "Type: " << Type << "\n" << "Type2: " << Type2 << endl;
+    "Attack: " << to_string(Attack) << " || " << "Defense: " << to_string(Defense) << " || " <<
+    "Speed: " << to_string(Speed) << " || " << "Max: " << Max << " || " << "Type: " << Type << " || " << "Type2: " << Type2 << endl;
 }

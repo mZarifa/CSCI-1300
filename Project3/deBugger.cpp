@@ -24,8 +24,8 @@ int main()
 {
     string text;
     string trainerName;
-    cout << "This is the debugger: Please enter a Pokemon name to check the stats. Type 'Z' to exit " <<
-            "type map to output the map." << endl;
+    cout << "This is the debugger: Please enter a Pokemon name to check the stats. Type 'Z' to exit " << endl;
+    cout << "Type map to output the map." << endl;
     getline(cin, text);
     if (text == "Z" || text == "z")
     {
@@ -54,5 +54,3 @@ int main()
     }
     main();
 }
-
-
